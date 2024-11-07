@@ -1,7 +1,7 @@
 document.getElementById('resumeform')?.addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent default form submission
+    event.preventDefault(); 
 
-    // Input data elements
+    
     const nameInput = (document.getElementById('name') as HTMLInputElement);
     const emailInput = (document.getElementById('email') as HTMLInputElement);
     const phoneInput = (document.getElementById('phone') as HTMLInputElement);
@@ -10,23 +10,23 @@ document.getElementById('resumeform')?.addEventListener('submit', function(event
     const experienceInput = (document.getElementById('experience') as HTMLTextAreaElement);
     const skillsInput = (document.getElementById('skills') as HTMLTextAreaElement);
 
-    // Profile image input
+    
     const profileImageInput = document.getElementById('profileImage') as HTMLInputElement;
-    const profileImageFile = profileImageInput.files?.[0]; // Get the first file if available
+    const profileImageFile = profileImageInput.files?.[0]; 
     let profileImageSrc = '';
 
     if (profileImageFile) {
         const reader = new FileReader();
         reader.onload = function(e) {
-            profileImageSrc = e.target?.result as string; // Get the image source
+            profileImageSrc = e.target?.result as string; 
             displayResume();
         };
-        reader.readAsDataURL(profileImageFile); // Read the file as a data URL
+        reader.readAsDataURL(profileImageFile); 
     } else {
-        displayResume(); // If no image, still display the resume
+        displayResume(); 
     }
 
-    // Output the resume
+   
     function displayResume() {
         const resumeOutput = `
             <h2>Resume</h2>
@@ -43,11 +43,11 @@ document.getElementById('resumeform')?.addEventListener('submit', function(event
             <p><span contenteditable="true" onblur="updateField('skillsDetails', this.innerText)">${skillsInput.value}</span></p>
         `;
 
-        // Display the resume output in the designated area
+        
         document.getElementById('resumeoutput')!.innerHTML = resumeOutput;
     }
 
-    // Function to update fields
+    
     (window as any).updateField = function(field: string, value: string) {
         switch (field) {
             case 'name':

@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Builder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Resume Builder Editable</h1>
+    <form id="resumeform">
+        <fieldset>
+            <legend>Information</legend>
+            <label for="name">Name:</label>
+            <input placeholder="Input Name:" type="text" name="name" id="name" required>
+
+            <label for="email">Email:</label>
+            <input placeholder="Input Email:" type="email" id="email" name="email" required>
+
+            <label for="phone">Phone:</label>
+            <input placeholder="Input Number:" type="tel" id="phone" name="phone" required>
+
+            <label for="address">Address:</label>
+            <textarea placeholder="Input Address:" name="address" id="address" rows="5" required></textarea>
+
+            <label for="profileImage">Profile Image:</label>
+            <input type="file" id="profileImage" name="profileImage" accept="image/*" required>
+        </fieldset>
+
+        <fieldset>
+            <legend>Education</legend>
+            <label for="education">Education</label>
+            <textarea placeholder="Education Information:" name="education" id="education" rows="5" required></textarea>
+        </fieldset>
+
+        <fieldset>
+            <legend>Experience</legend>
+            <label for="experience">Experience</label>
+            <textarea placeholder="Previous Experience:" name="experience" id="experience" rows="5" required></textarea>
+        </fieldset>
+
+        <fieldset>
+            <legend>Skills</legend>
+            <label for="skills">Skills</label>
+            <textarea placeholder="Example HTML/CSS JavaScript:" name="skills" id="skills" rows="5" required></textarea>
+        </fieldset>
+
+        <button type="submit">Generate</button>
+    </form>
+
+    <div id="resumeoutput"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
